@@ -1,0 +1,22 @@
+{
+  "name": "aoc22",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node ./src",
+    "lvl1-1": "ts-node src/1/index.ts",
+    "lvl1-2": "ts-node src/1/part-2/index.ts",
+    "ts-init": "ts-jest config:init",
+    "build": "tsc",
+    "tsc-init": "tsc --init"
+  },
+  "dependencies": {
+    "aoc-util": "^1.0.0",
+    "ts-node": "^10.9.1",
+    "tsc": "^2.0.4",
+    "typescript": "^4.9.3"
+  },
+  "author": "maciej",
+  "license": "MIT"
+}
