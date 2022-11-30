@@ -1,22 +1,26 @@
 {
-  "name": "aoc22",
+  "name": "aoc-2022",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node ./src",
-    "lvl1-1": "ts-node src/1/index.ts",
-    "lvl1-2": "ts-node src/1/part-2/index.ts",
-    "ts-init": "ts-jest config:init",
-    "build": "tsc",
-    "tsc-init": "tsc --init"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node ./src/$level/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://maciejlys@github.com/maciejlys/aoc2022.git"
+  },
+  "author": "Maciej Łyszczarz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maciejlys/aoc2022/issues"
   },
   "dependencies": {
     "aoc-util": "^1.0.0",
-    "ts-node": "^10.9.1",
     "tsc": "^2.0.4",
+    "ts-node": "^10.9.1",
+
     "typescript": "^4.9.3"
-  },
-  "author": "maciej",
-  "license": "MIT"
+  }
 }
