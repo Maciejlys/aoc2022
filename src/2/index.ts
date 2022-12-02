@@ -12,12 +12,6 @@ enum Shape {
   Scissors = "Scissors",
 }
 
-const outcomes = {
-  Win: "Z",
-  Loss: "X",
-  Draw: "Y",
-};
-
 interface Sign {
   type: Shape;
   letters: string[];
