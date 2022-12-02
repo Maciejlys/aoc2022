@@ -76,12 +76,6 @@ const solvePart1 = (input: string[][]) => {
   console.log(scores.reduce((a, b) => a + b, 0));
 };
 
-const outcomeMap = {
-  X: "Loss",
-  Y: "Draw",
-  Z: "Win",
-};
-
 const solvePart2 = (input: string[][]) => {
   const scores: number[] = [];
   input.forEach((line) => {
