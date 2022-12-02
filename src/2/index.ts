@@ -12,14 +12,14 @@ enum Shape {
   Scissors = "Scissors",
 }
 
-interface Sign {
+interface ShapeInfo {
   type: Shape;
   letters: string[];
   winsWith: string;
   points: number;
 }
 
-const Signs: Sign[] = [
+const shapes: ShapeInfo[] = [
   {
     type: Shape.Rock,
     letters: ["A", "X"],
@@ -51,8 +51,8 @@ const solvePart1 = (input: string[][]) => {
   input.forEach((line) => {
     let score = 0;
     const [opponent, me] = line;
-    const opponentSign = Signs.find((s) => s.letters.includes(opponent));
-    const mySign = Signs.find((s) => s.letters.includes(me));
+    const opponentSign = shapes.find((s) => s.letters.includes(opponent));
+    const mySign = shapes.find((s) => s.letters.includes(me));
 
     if (opponentSign && mySign) {
       if (mySign.winsWith === opponentSign.type) {
@@ -75,21 +75,21 @@ const solvePart2 = (input: string[][]) => {
   input.forEach((line) => {
     let score = 0;
     const [opponent, outcome] = line;
-    const opponentSign = Signs.find((s) => s.letters.includes(opponent));
-    let mySign: Sign;
+    const opponentSign = shapes.find((s) => s.letters.includes(opponent));
+    let mySign: ShapeInfo;
 
     if (opponentSign) {
       if (outcome === "X") {
-        const possibleSigns = Signs.filter(
+        const possibleSigns = shapes.filter(
           (s) => s.winsWith != opponentSign.type && opponentSign.type != s.type
         );
         mySign = possibleSigns.reduce((a, b) => (a.points > b.points ? a : b));
         score += MatchResult.Loss;
       } else if (outcome === "Z") {
-        mySign = Signs.find((s) => s.winsWith === opponentSign.type)!;
+        mySign = shapes.find((s) => s.winsWith === opponentSign.type)!;
         score += MatchResult.Win;
       } else {
-        mySign = Signs.find((s) => opponentSign.type === s.type)!;
+        mySign = shapes.find((s) => opponentSign.type === s.type)!;
         score += MatchResult.Draw;
       }
       score += mySign.points;
